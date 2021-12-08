@@ -1,0 +1,50 @@
+header {
+  display: flex;
+  width: 300px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+  width: 100%;
+}
+
+nav > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+nav > ul > li > a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.018em;
+}
+
+nav > ul > li > a.active {
+  text-decoration: underline;
+  text-decoration-color: #6B1EB3;
+  text-decoration-thickness: 2px;
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    width: 100%;
+  }
+
+  nav {
+    margin: 40px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  nav > ul {
+    width: 70%
+  }
+}
