@@ -3,19 +3,28 @@ import { motion } from "framer-motion";
 
 import "./App.css";
 
-import look_see from "../../photos/000274910020.jpg";
-import glow from "../../photos/6M6A5315.jpg";
+import look_behind from "../../photos/000274910020.jpg";
 import snow_day from "../../photos/6M6A1353.jpg";
 import dunes from "../../photos/6M6A7250.jpg";
-import generations from "../../photos/6M6A8433.jpg";
+import cambridge from '../../photos/000547430021.jpg';
+import facade from '../../photos/000547430026.jpg';
 import dock from "../../photos/000240630017.jpg";
+import dart from '../../photos/6M6A8951.jpg';
+import bait_and_tackle from "../../photos/000240630012.jpg"
 
 import { Header } from "../Header";
 import { LightBox } from "../LightBox";
 
 function App(): React.ReactElement {
   const featuredImage = snow_day;
-  const galleryImages = [dock, glow, look_see, generations, dunes];
+  const galleryImages = [
+    facade,
+    dart,
+    look_behind,
+    cambridge,
+    dock,
+    dunes,
+  ];
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const Gallery = useMemo(

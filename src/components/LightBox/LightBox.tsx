@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion } from "framer-motion";
+
+import ChevronRight from '../Svg/ChevronRight';
+import ChevronLeft from '../Svg/ChevronLeft';
+import Close from '../Svg/Close'
 
 import "./LightBox.css";
 
@@ -30,9 +28,12 @@ const LightBox: React.FC<LightBoxProps> = ({
     }
 
     document.addEventListener("click", handleBackgroundClick);
+    document.addEventListener("keydown", handleKeyDown);
 
-    return (): void =>
+    return (): void => {
       document.removeEventListener("click", handleBackgroundClick);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, [selectedImage]);
 
   return (
@@ -45,11 +46,9 @@ const LightBox: React.FC<LightBoxProps> = ({
           transition={{ duration: 0.4 }}
           exit={{ opacity: 0 }}
         >
-          <FontAwesomeIcon
-            icon={faChevronLeft}
-            onClick={handlePrevClick}
-            className="chevron-left"
-          />
+          <button className="chevron-left" onClick={handlePrevClick}>
+            <ChevronLeft />
+          </button>
           <motion.img
             className="lightbox--image"
             src={selectedImage}
@@ -58,16 +57,15 @@ const LightBox: React.FC<LightBoxProps> = ({
             transition={{ duration: 0.2 }}
             exit={{ opacity: 0, y: 50 }}
           />
-          <FontAwesomeIcon
-            icon={faChevronRight}
-            onClick={handleNextClick}
-            className="chevron-right"
-          />
-          <FontAwesomeIcon
-            icon={faTimes}
+          <button className="chevron-right" onClick={handleNextClick}>
+            <ChevronRight />
+          </button>
+          <button
             onClick={handleCloseClick}
             className="close"
-          />
+          >
+            <Close />
+          </button>
         </motion.div>
       )}
     </AnimatePresence>
@@ -82,6 +80,10 @@ const LightBox: React.FC<LightBoxProps> = ({
   }
 
   function handleNextClick(): void {
+    if (!selectedImage) {
+      return;
+    }
+
     const index = images.map((i) => selectedImage!.includes(i)).indexOf(true);
     const match = index > -1;
 
@@ -92,12 +94,29 @@ const LightBox: React.FC<LightBoxProps> = ({
   }
 
   function handlePrevClick(): void {
+    if (!selectedImage) {
+      return;
+    }
+
     const index = images.map((i) => selectedImage!.includes(i)).indexOf(true);
     const match = index > -1;
 
     if (match) {
       const prevIndex = index - 1 < 0 ? images.length - 1 : index - 1;
       setSelectedImage(images[prevIndex]);
+    }
+  }
+
+  function handleKeyDown(event: any): void {
+    console.log(selectedImage);
+    const { key } = event;
+
+    if (key === "ArrowRight") {
+      handleNextClick();
+    } else if (key === "ArrowLeft") {
+      handlePrevClick();
+    } else if (key === "Escape") {
+      setSelectedImage(null);
     }
   }
 

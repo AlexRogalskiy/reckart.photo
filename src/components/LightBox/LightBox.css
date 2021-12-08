@@ -15,23 +15,37 @@
 
 .lightbox--image {
   cursor: default;
-  max-height: 80vh;
+  max-height: 85vh;
 }
 
 .chevron-left,
 .chevron-right,
 .close {
-  color: #4a4a4a;
-  font-size: 18px;
-  position: absolute;
-  padding: 16px;
   cursor: pointer;
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 16px;
+  position: absolute;
 }
 
-.chevron-left:hover,
-.chevron-right:hover,
-.close:hover {
-  color: #fff;
+.chevron-left > svg,
+.chevron-right > svg,
+.close > svg {
+  display: block;
+  height:24px;
+}
+
+.chevron-left > svg > path,
+.chevron-right > svg > path,
+.close > svg > path {
+  fill: #4a4a4a;
+}
+
+.chevron-left:hover >  svg > path,
+.chevron-right:hover > svg > path,
+.close:hover > svg > path{
+  fill: #fff;
 }
 
 .chevron-left {

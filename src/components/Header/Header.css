@@ -29,22 +29,16 @@ nav > ul > li > a {
 
 nav > ul > li > a.active {
   text-decoration: underline;
-  text-decoration-color: #6B1EB3;
+  text-decoration-color: #fff;
   text-decoration-thickness: 2px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 540px) {
   header {
     width: 100%;
   }
 
   nav {
     margin: 40px;
-  }
-}
-
-@media screen and (max-width: 620px) {
-  nav > ul {
-    width: 70%
   }
 }
