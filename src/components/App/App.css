@@ -16,6 +16,20 @@
 .gallery img {
   display: block;
   cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.gallery img:hover {
+  -webkit-transform: scale(1.05) !important;
+  -moz-transform: scale(1.05) !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0px 0px 20px 10px rgba(0,0,0,.25);
+  z-index: 1000;
+}
+
+.gallery-grid--featured-image > img:hover {
+  transform: scale(1.025) !important;
+  z-index: 1001;
 }
 
 .gallery-grid--featured-image {

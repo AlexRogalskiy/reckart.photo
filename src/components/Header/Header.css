@@ -1,22 +1,25 @@
 header {
   display: flex;
-  width: 300px;
+  width: 620px;
 }
 
 nav {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 40px 0;
+  margin: 40px;
   width: 100%;
 }
 
 nav > ul {
   list-style: none;
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
+  align-self: stretch;
+}
+
+nav > ul > li {
+  margin-right: 36px;
 }
 
 nav > ul > li > a {
@@ -29,7 +32,7 @@ nav > ul > li > a {
 
 nav > ul > li > a.active {
   text-decoration: underline;
-  text-decoration-color: #fff;
+  text-decoration-color: #4F6BDC;
   text-decoration-thickness: 2px;
 }
 

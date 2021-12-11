@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import ChevronRight from '../Svg/ChevronRight';
-import ChevronLeft from '../Svg/ChevronLeft';
-import Close from '../Svg/Close'
+import ChevronRight from '../../icons/ChevronRight';
+import ChevronLeft from '../../icons/ChevronLeft';
+import Close from '../../icons/Close'
 
 import "./LightBox.css";
 
