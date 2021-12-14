@@ -28,6 +28,7 @@ nav > ul {
 
 nav > ul > li {
   margin-right: 36px;
+  line-height: 36px;
 }
 
 nav > ul > li:last-of-type {
@@ -49,6 +50,10 @@ nav > ul > li > a.active {
 }
 
 @media screen and (max-width: 620px) {
+  nav {
+    margin: 40px 20px;
+  }
+
   nav > ul > li {
     margin-right: 24px;
   }
