@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
+import LazyLoad from 'react-lazyload';
 
 import "./App.css";
 
@@ -32,15 +33,17 @@ function App(): React.ReactElement {
       <div className="gallery-grid--wrapper">
         {galleryImages.map(
           (img: string, i: number): JSX.Element => (
-            <motion.img
-              key={i}
-              onClick={handleImageClick}
-              className="gallery-grid--item"
-              src={img}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: `1.${i}` }}
-            />
+            <LazyLoad offset={100}>
+              <motion.img
+                key={i}
+                onClick={handleImageClick}
+                className="gallery-grid--item"
+                src={img}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: `1.${i}` }}
+              />
+            </LazyLoad>
           )
         )}
       </div>

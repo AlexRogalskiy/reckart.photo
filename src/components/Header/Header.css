@@ -31,7 +31,7 @@ nav > ul > li {
 }
 
 nav > ul > li:last-of-type {
-  margin-right: 0;
+  margin-right: 0 !important;
 }
 
 nav > ul > li > a {
@@ -48,12 +48,8 @@ nav > ul > li > a.active {
   text-decoration-thickness: 2px;
 }
 
-@media screen and (max-width: 540px) {
-  header {
-    width: 100%;
-  }
-
-  nav {
-    margin: 40px;
+@media screen and (max-width: 620px) {
+  nav > ul > li {
+    margin-right: 24px;
   }
 }
