@@ -13,17 +13,17 @@ export default function Header(): React.ReactElement {
         </a>
         <ul>
           <li>
-            <a href="https://reckart.blog">home</a>
+            <a href="https://reckart.blog">Home</a>
           </li>
           <li>
-            <a href="https://reckart.blog/blog">blog</a>
+            <a href="https://reckart.blog/blog">Blog</a>
           </li>
           <li>
-            <a href="https://reckart.blog/about">about</a>
+            <a href="https://reckart.blog/about">About</a>
           </li>
           <li>
             <a className="active" href="/">
-              gallery
+              Gallery
             </a>
           </li>
         </ul>
